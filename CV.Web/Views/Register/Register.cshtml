@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model CV.Core.DTOs.UserViewModel
+@{
+    ViewData["Title"] = "ثبت نام";
+}
+
+<nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">تاپ لرن</a></li>
+        <li class="breadcrumb-item active" aria-current="page">عضویت در سایت</li>
+    </ul>
+</nav>
+
+<main class="client-page">
+    <div class="container-content">
+
+        <header><h2> عضویت در سایت </h2></header>
+
+        <div class="form-layer">
+
+            <form asp-action="Register" method="post">
+
+
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="UserName" type="text" class="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="birth-place"><i class="zmdi zmdi-email"></i></span>
+                    <input asp-for="BirthPlace" type="text" class="form-control" placeholder="محل تولد" aria-describedby="email-address">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="father-name"><i class="zmdi zmdi-lock"></i></span>
+                    <input asp-for="FatherName" type="text" class="form-control" placeholder="نام پدر " aria-describedby="password">
+                </div>
+
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <button class="btn btn-success"> ثبت نام </button>
+
+            </form>
+        </div>
+
+    </div>
+</main>

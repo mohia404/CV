@@ -18,6 +18,7 @@ namespace CV.DataLayer.Context
         #region User
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Job> Jobs { get; set; }
 
 
         #endregion
