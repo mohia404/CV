@@ -29,7 +29,6 @@ namespace CV.Core.DTOs
 
         [Display(Name = "شماره شناسنامه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(10, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int IdNumber { get; set; }
 
         [Display(Name = "ملیت")]
@@ -38,7 +37,6 @@ namespace CV.Core.DTOs
         public string Nation { get; set; }
 
         [Display(Name = "مذهب")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string Religion { get; set; }
 
@@ -77,27 +75,22 @@ namespace CV.Core.DTOs
 
         [Display(Name = "سال ورود به دانشگاه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(4, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int UniversityStartYear { get; set; }
 
         [Display(Name = "سال اخذ مدرک")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(4, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int UniversityEndYear { get; set; }
 
         [Display(Name = "تلفن ثابت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(12, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int Telephone { get; set; }
 
         [Display(Name = "تلفن همراه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(15, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int Mobile { get; set; }
 
         [Display(Name = "تلفن ضروری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(15, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int EmergencyNumber { get; set; }
 
         [Display(Name = "وضعیت محل سکونت")]
@@ -107,8 +100,12 @@ namespace CV.Core.DTOs
 
         [Display(Name = "تعداد افراد تحت تکفل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(2, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int Dependants { get; set; }
+
+        [Display(Name = "محل سکونت")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string Address { get; set; }
 
         [Display(Name = "زبان های دیگر")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -117,17 +114,14 @@ namespace CV.Core.DTOs
 
         [Display(Name = "مکالمه انگلیسی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(2, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int EnglishSpeaking { get; set; }
 
         [Display(Name = "خواندن انگلیسی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(2, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int EnglishReading { get; set; }
 
         [Display(Name = "نوشتن انگلیسی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(2, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int EnglishWriting { get; set; }
 
         [Display(Name = "ویژگی و روحیات کاری")]
@@ -152,7 +146,6 @@ namespace CV.Core.DTOs
 
         [Display(Name = "میزان حقوق درخواستی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int ExpectedSalary { get; set; }
 
         [Display(Name = "علاقه به کار دیگری")]
@@ -160,16 +153,12 @@ namespace CV.Core.DTOs
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string OtherWork { get; set; }
 
-        [Display(Name = "تاریخ تکمیل فرم")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public DateTime RegisterTime { get; set; }
+        //[Display(Name = "کارهای سابق")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        //public List<Job> Jobs { get; set; }
 
-        [Display(Name = "کارهای سابق")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public List<Job> Jobs { get; set; }
-
-
+        [MaxLength(50)]
+        public string UserImageName { get; set; }
     }
 }

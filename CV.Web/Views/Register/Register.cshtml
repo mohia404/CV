@@ -17,27 +17,154 @@
 <main class="client-page">
     <div class="container-content">
 
-        <header><h2> عضویت در سایت </h2></header>
+        <header><h2> فرم تقاضای کار شرکت سپهر انفورماتیک </h2></header>
 
         <div class="form-layer">
 
             <form asp-action="Register" method="post">
-
-
-
                 <div class="input-group">
                     <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
                     <input asp-for="UserName" type="text" class="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username">
+                    <input asp-for="BirthPlace" type="text" class="form-control" placeholder="محل تولد" aria-describedby="username">
+                    <input asp-for="FatherName" type="text" class="form-control" placeholder="نام پدر" aria-describedby="username">
+
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="IdNumber" type="number" class="form-control" placeholder="شماره شناسنامه " aria-describedby="username">
+                    <input asp-for="Nation" type="text" class="form-control" placeholder="ملیت " aria-describedby="username">
+                    @*<div class="input-group" style="padding:0">
+                <input asp-for="Nation" type="text" class="form-control" placeholder="ملیت " aria-describedby="username">
+                <span class="input-group-addon" id="username" style="width:0px"></span>
+                <input asp-for="Religion" type="text" class="form-control" placeholder="مذهب " aria-describedby="username">
+            </div>*@
+                    <input asp-for="FatherJob" type="text" class="form-control" placeholder="شغل پدر " aria-describedby="username">
+
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="BirthDate" type="date" class="form-control" placeholder="تاریخ تولد " aria-describedby="username">
+                    <input asp-for="DutyPossition" type="text" class="form-control" placeholder="وضعیت نظام وظیفه " aria-describedby="username">
+                    @*<input asp-for="IsMarried" type="text" class="form-control" placeholder="وضعیت تاهل " aria-describedby="username">*@
+                    <div class="input-group" style="padding:0">
+                        <span class="input-group-addon" id="username"><em>وضیت تاهل</em></span>
+                        <input asp-for="IsMarried" type="radio" value=true id="IsMarried" name="IsMarried" />متاهل<br />
+                        <input asp-for="IsMarried" type="radio" value=false id="IsMarried" name="IsMarried" />مجرد<br />
+                    </div>
                 </div>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="birth-place"><i class="zmdi zmdi-email"></i></span>
-                    <input asp-for="BirthPlace" type="text" class="form-control" placeholder="محل تولد" aria-describedby="email-address">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="DegreeOfEducation" type="text" class="form-control" placeholder="آخرین مدرک تحصیلی" aria-describedby="username">
+                    <input asp-for="UniversityName" type="text" class="form-control" placeholder="نام دانشگاه" aria-describedby="username">
+
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="FieldOfEducation" type="text" class="form-control" placeholder="رشته تحصیلی/گرایش " aria-describedby="username">
+                    <div class="input-group" style="padding:0">
+                        <input asp-for="UniversityStartYear" type="number" class="form-control" placeholder="سال ورود به دانشگاه " aria-describedby="username">
+                        <span class="input-group-addon" id="username" style="width:10px"></span>
+                        <input asp-for="UniversityEndYear" type="number" class="form-control" placeholder="سال اخذ مدرک " aria-describedby="username">
+                    </div>
                 </div>
 
                 <div class="input-group">
-                    <span class="input-group-addon" id="father-name"><i class="zmdi zmdi-lock"></i></span>
-                    <input asp-for="FatherName" type="text" class="form-control" placeholder="نام پدر " aria-describedby="password">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                    <input asp-for="Telephone" type="number" class="form-control" placeholder="تلفن ثابت" aria-describedby="username">
+
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                    <input asp-for="Mobile" type="number" class="form-control" placeholder="تلفن همراه " aria-describedby="username">
+
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                    <input asp-for="EmergencyNumber" type="number" class="form-control" placeholder="تلفن مواقع ضروری " aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-home"></i></span>
+                    <div class="input-group" style="padding:0">
+                        <input asp-for="ResidentialSituation" type="text" class="form-control" placeholder="وضعیت محل سکونت" aria-describedby="username">
+                        <span class="input-group-addon" id="username" style="width:10px"></span>
+                        <input asp-for="Dependants" type="number" class="form-control" placeholder="تعداد افراد تحت تکفل " aria-describedby="username">
+                    </div>
+
+                    <input asp-for="Address" type="text" class="form-control" placeholder="آدرس محل سکونت " aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="OtherLanguages" type="text" class="form-control" placeholder="زبانهایی که با آن اشنایی دارید را به ترتیب مهارت نام ببرید " aria-describedby="username">
+                </div>
+
+                <h2>زبان انگلیسی</h2>
+                <div class="input-group">
+
+
+                    <div class="input-group" style="padding:0">
+                        @*<input asp-for="EnglishSpeaking" type="text" class="form-control" placeholder="مکالمه" aria-describedby="username">*@
+                        <span class="input-group-addon" id="username"><em>مکالمه</em></span>
+                        <input asp-for="EnglishSpeaking" type="radio" value=2 id="EnglishSpeaking" name="EnglishSpeaking" />خوب<br />
+                        <input asp-for="EnglishSpeaking" type="radio" value=1 id="EnglishSpeaking" name="EnglishSpeaking" />متوسط<br />
+                        <input asp-for="EnglishSpeaking" type="radio" value=0 id="EnglishSpeaking" name="EnglishSpeaking" />ضعیف<br />
+                        <span class="input-group-addon" id="username"><em>خواندن</em></span>
+                        @*<input asp-for="EnglishReading" type="number" class="form-control" placeholder="خواندن " aria-describedby="username">*@
+                        <input asp-for="EnglishReading" type="radio" value=2 id="EnglishReading" name="EnglishReading" />خوب<br />
+                        <input asp-for="EnglishReading" type="radio" value=1 id="EnglishReading" name="EnglishReading" />متوسط<br />
+                        <input asp-for="EnglishReading" type="radio" value=0 id="EnglishReading" name="EnglishReading" />ضعیف<br />
+                        <span class="input-group-addon" id="username"><em>نوشتن</em></span>
+                        @*<input asp-for="EnglishWriting" type="number" class="form-control" placeholder="نوشتن " aria-describedby="username">*@
+                        <input asp-for="EnglishWriting" type="radio" value=2 id="EnglishWriting" name="EnglishWriting" />خوب<br />
+                        <input asp-for="EnglishWriting" type="radio" value=1 id="EnglishWriting" name="EnglishWriting" />متوسط<br />
+                        <input asp-for="EnglishWriting" type="radio" value=0 id="EnglishWriting" name="EnglishWriting" />ضعیف<br />
+                    </div>
+                </div>
+
+                <h2>سوابق کاری یا تجربه</h2>
+
+                @*<partial name="AddWork" />*@
+
+
+                @*<div class="input-group">
+            @foreach (var job in Model.Jobs)
+            {
+                <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                <input asp-for="@job.JobName" type="text" class="form-control" placeholder="تلفن ثابت" aria-describedby="username">
+
+                <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                <input asp-for="@job.JobAddress" type="text" class="form-control" placeholder="تلفن همراه " aria-describedby="username">
+
+                <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                <input asp-for="@job.ToString" type="text" class="form-control" placeholder="تلفن مواقع ضروری " aria-describedby="username">
+            }
+
+        </div>*@
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="WorkTraits" type="text" class="form-control" placeholder="ویژگی و روحیات کاری" aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="WorkProjects" type="text" class="form-control" placeholder="دوره های آموزشی یا کاراموزی طی شده " aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="Interests" type="text" class="form-control" placeholder="علایق و توانایی ها " aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="LifeGoal" type="text" class="form-control" placeholder="هدف 5 ساله زندگی" aria-describedby="username">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="ExpectedSalary" type="number" class="form-control" placeholder="میان حقوق درخواستی " aria-describedby="username">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
+                    <input asp-for="OtherWork" type="text" class="form-control" placeholder="آیا علاوه بر رشته تحصیلی خود تمایل به همکاری در زمینه دیگری مثل قسمت فروش یا دفتری می باشید؟ لطفا ذکر نمایید " aria-describedby="username">
+                </div>
+
+                <img id="imgCourse" class="thumbnail" src="/UserAvatar/Defult.jpg" style="height:150px;width:150px"/>
+                <div class="form-group">
+                    <label>انتخاب تصویر</label>
+                    <input asp-for="UserImageName" type="file" id="imgCourseUp">
                 </div>
 
 

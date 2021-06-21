@@ -43,7 +43,6 @@ namespace CV.DataLayer.Entities
         public string Nation { get; set; }
 
         [Display(Name = "مذهب")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string Religion { get; set; }
 
@@ -115,6 +114,11 @@ namespace CV.DataLayer.Entities
         [MaxLength(2, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public int Dependants { get; set; }
 
+        [Display(Name = "محل سکونت")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string Address { get; set; }
+
         [Display(Name = "زبان های دیگر")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
@@ -169,6 +173,9 @@ namespace CV.DataLayer.Entities
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public DateTime RegisterTime { get; set; }
+
+        [MaxLength(50)]
+        public string UserImageName { get; set; }
 
 
         #region Relations
