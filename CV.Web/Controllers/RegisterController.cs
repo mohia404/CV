@@ -48,11 +48,20 @@ namespace CV.Web.Controllers
                 return View(register);
             }
 
-            var filename = ContentDispositionHeaderValue.Parse(UserImageName.ContentDisposition).FileName.Trim('"');
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserAvatar", UserImageName.FileName);
-            using (System.IO.Stream stream = new FileStream(path, FileMode.Create))
+            string filename;
+            
+            if(UserImageName!=null)
             {
-                await UserImageName.CopyToAsync(stream);
+                filename = ContentDispositionHeaderValue.Parse(UserImageName.ContentDisposition).FileName.Trim('"');
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserAvatar", UserImageName.FileName);
+                using (System.IO.Stream stream = new FileStream(path, FileMode.Create))
+                {
+                    await UserImageName.CopyToAsync(stream);
+                }
+            }
+            else
+            {
+                filename = "defult.jpg";
             }
 
             User user = new User()
