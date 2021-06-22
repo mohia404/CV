@@ -32,10 +32,10 @@
                     <input asp-for="IdNumber" type="number" class="form-control" placeholder="شماره شناسنامه " aria-describedby="username">
                     <input asp-for="Nation" type="text" class="form-control" placeholder="ملیت " aria-describedby="username">
                     @*<div class="input-group" style="padding:0">
-                            <input asp-for="Nation" type="text" class="form-control" placeholder="ملیت " aria-describedby="username">
-                            <span class="input-group-addon" id="username" style="width:0px"></span>
-                            <input asp-for="Religion" type="text" class="form-control" placeholder="مذهب " aria-describedby="username">
-                        </div>*@
+                <input asp-for="Nation" type="text" class="form-control" placeholder="ملیت " aria-describedby="username">
+                <span class="input-group-addon" id="username" style="width:0px"></span>
+                <input asp-for="Religion" type="text" class="form-control" placeholder="مذهب " aria-describedby="username">
+            </div>*@
                     <input asp-for="FatherJob" type="text" class="form-control" placeholder="شغل پدر " aria-describedby="username">
 
                     <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
@@ -114,24 +114,31 @@
                 </div>
 
                 <h2>سوابق کاری یا تجربه</h2>
+                <div class="input-group">
+                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
+                    <input asp-for="JobQuantity" type="number" class="form-control" id="jobQuantity" placeholder="تعداد سوابق کاری(بین 0 تا 4)" aria-describedby="username" onchange="changeJobQuantities">
+                </div>
+
+                <div class="input-group">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <span class="input-group-addon" id="username"><em>@(i+1)</em></span>
+                        <input asp-for="Jobs[i].JobName" type="text" class="form-control" placeholder="نام شرکت" aria-describedby="username">
+                        <input asp-for="Jobs[i].JobNumber" type="text" class="form-control" placeholder="تلفن شرکت" aria-describedby="username">
+                        <input asp-for="Jobs[i].JobAddress" type="text" class="form-control" placeholder="آدرس شرکت" aria-describedby="username">
+                        <input asp-for="Jobs[i].StartYear" type="date" class="form-control" placeholder="شروع" aria-describedby="username">
+                        <input asp-for="Jobs[i].EndYear" type="date" class="form-control" placeholder="خاتمه" aria-describedby="username">
+                        <input asp-for="Jobs[i].JobSalary" type="text" class="form-control" placeholder="میزان حقوق" aria-describedby="username">
+                        <input asp-for="Jobs[i].JobDetails" type="text" class="form-control" placeholder="سمت و وظایف" aria-describedby="username">
+                        <input asp-for="Jobs[i].JobEndReason" type="text" class="form-control" placeholder="علت ترک کار" aria-describedby="username">
+                    }
+                </div>
 
                 @*<partial name="AddWork" />*@
 
 
-                @*<div class="input-group">
-                        @foreach (var job in Model.Jobs)
-                        {
-                            <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
-                            <input asp-for="@job.JobName" type="text" class="form-control" placeholder="تلفن ثابت" aria-describedby="username">
 
-                            <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
-                            <input asp-for="@job.JobAddress" type="text" class="form-control" placeholder="تلفن همراه " aria-describedby="username">
-
-                            <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
-                            <input asp-for="@job.ToString" type="text" class="form-control" placeholder="تلفن مواقع ضروری " aria-describedby="username">
-                        }
-
-                    </div>*@
+                @* Job div *@
 
                 <div class="input-group">
                     <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
@@ -165,7 +172,6 @@
                     <h2>بارگذاری عکس</h2>
                     <input type="file" asp-for="UserImageName">
                 </div>
-
 
                 <div asp-validation-summary="All" class="text-danger"></div>
 

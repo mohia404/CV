@@ -13,40 +13,30 @@ namespace CV.Core.DTOs
         public int UserId { get; set; }
 
         [Display(Name = "نام شرکت")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string JobName { get; set; }
 
         [Display(Name = "شماره شرکت")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public int JobNumber { get; set; }
+        public int? JobNumber { get; set; } = 0;
 
         [Display(Name = "آدرس شرکت")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string JobAddress { get; set; }
 
         [Display(Name = "شروع کار")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public DateTime StartYear { get; set; }
+        public DateTime? StartYear { get; set; } = DateTime.Now;
 
         [Display(Name = "خاتمه کار")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public DateTime EndYear { get; set; }
+        public DateTime? EndYear { get; set; } = DateTime.Now;
 
         [Display(Name = "سمت و وظایف")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string JobDetails { get; set; }
 
-        [Display(Name = "سمت و وظایف")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public int JobSalary { get; set; }
+        [Display(Name = "حقوق")]
+        public int? JobSalary { get; set; } = 0;
 
         [Display(Name = "علت ترک کار")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string JobEndReason { get; set; }
     }

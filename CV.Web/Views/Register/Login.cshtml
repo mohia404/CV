@@ -1,0 +1,90 @@
+﻿@model List<CV.Core.DTOs.TableUserViewModel>
+
+<div class="table-responsive">
+    <table class="table table-responsive">
+        <tr>
+            <th>نام و نام خوانوادگی</th>
+            <th>محل تولد</th>
+            <th>نام پدر</th>
+            <th>شماره شناسنامه</th>
+            <th>ملیت</th>
+            <th>مذهب</th>
+            <th>شغل پدر</th>
+            <th>تاریخ تولد</th>
+            <th>وضعیت نظام وظیفه</th>
+            <th>وضعیت تاهل</th>
+            <th>آخرین مدرک تحصیلی</th>
+            <th>رشته تحصیلی/گرایش</th>
+            <th>نام دانشگاه</th>
+            <th>سال ورود به دانشگاه</th>
+            <th>سال اخذ مدرک</th>
+            <th>تلفن ثابت</th>
+            <th>تلفن همراه</th>
+            <th>تلفن ضروری</th>
+            <th>وضعیت محل سکونت</th>
+            <th>تعداد افراد تحت تکفل</th>
+            <th>آدرس محل سکونت</th>
+            <th>زبان ها</th>
+            <th>مکالکه زبان انگلیسی</th>
+            <th>خواندن زبان انگلیسی</th>
+            <th>نوشتن زبان انگلیسی</th>
+            <th>ویژگی و روحیات کاری</th>
+            <th>دوره های آموزشی</th>
+            <th>علایق و توانمندی ها</th>
+            <th>هدف 5 ساله زندگی</th>
+            <th>میزان حقوق درخواستی</th>
+            <th>مایل به کار در زمینه دیگر</th>
+            <th>عکس</th>
+            <th>شغل پیشین 1</th>
+            <th>شغل پیشین 2</th>
+            <th>شغل پیشین 3</th>
+            <th>شغل پیشین 4</th>
+        </tr>
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            <tr>
+                <td>@Model[i].UserName</td>
+                <td>@Model[i].BirthPlace</td>
+                <td>@Model[i].FatherName</td>
+                <td>@Model[i].IdNumber</td>
+                <td>@Model[i].Nation</td>
+                <td>@Model[i].Religion</td>
+                <td>@Model[i].FatherJob</td>
+                <td>@Model[i].BirthDate</td>
+                <td>@Model[i].DutyPossition</td>
+                <td>@Model[i].IsMarried</td>
+                <td>@Model[i].DegreeOfEducation</td>
+                <td>@Model[i].FieldOfEducation</td>
+                <td>@Model[i].UniversityName</td>
+                <td>@Model[i].UniversityStartYear</td>
+                <td>@Model[i].UniversityEndYear</td>
+                <td>@Model[i].Telephone</td>
+                <td>@Model[i].Mobile</td>
+                <td>@Model[i].EmergencyNumber</td>
+                <td>@Model[i].ResidentialSituation</td>
+                <td>@Model[i].Dependants</td>
+                <td>@Model[i].Address</td>
+                <td>@Model[i].OtherLanguages</td>
+                <td>@Model[i].EnglishSpeaking</td>
+                <td>@Model[i].EnglishReading</td>
+                <td>@Model[i].EnglishWriting</td>
+                <td>@Model[i].WorkTraits</td>
+                <td>@Model[i].WorkProjects</td>
+                <td>@Model[i].Interests</td>
+                <td>@Model[i].LifeGoal</td>
+                <td>@Model[i].ExpectedSalary</td>
+                <td>@Model[i].OtherWork</td>
+                <td><img src="/UserAvatar/@Model[i].UserImageName" alt="/UserAvatar/Default.jpg"></td>
+                @for (int j = 0; j < Model[i].Jobs.Count(); j++)
+                {
+                    @if (@Model[i].Jobs != null)
+                    {
+                        <td>@Model[i].Jobs[j]</td>
+                    }
+
+                }
+            </tr>
+        }
+    </table>
+</div>
+

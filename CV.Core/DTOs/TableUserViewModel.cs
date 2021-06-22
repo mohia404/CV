@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace CV.Core.DTOs
 {
-    public class UserViewModel
+    public class TableUserViewModel
     {
-        public int UserId { get; set; }
-
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
@@ -56,7 +54,7 @@ namespace CV.Core.DTOs
 
         [Display(Name = "وضعیت تاهل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public bool IsMarried { get; set; }
+        public string IsMarried { get; set; }
 
         [Display(Name = "اخرین مدرک تحصیلی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -114,15 +112,15 @@ namespace CV.Core.DTOs
 
         [Display(Name = "مکالمه انگلیسی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public int EnglishSpeaking { get; set; }
+        public string EnglishSpeaking { get; set; }
 
         [Display(Name = "خواندن انگلیسی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public int EnglishReading { get; set; }
+        public string EnglishReading { get; set; }
 
         [Display(Name = "نوشتن انگلیسی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public int EnglishWriting { get; set; }
+        public string EnglishWriting { get; set; }
 
         [Display(Name = "ویژگی و روحیات کاری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -154,7 +152,7 @@ namespace CV.Core.DTOs
         public string OtherWork { get; set; }
 
         [Display(Name = "کارهای سابق")]
-        public List<Job> Jobs { get; set; }
+        public List<string> Jobs { get; set; }
 
         public int JobQuantity { get; set; }
 

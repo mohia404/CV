@@ -11,5 +11,7 @@ namespace CV.Core.Services.Interfaces
     {
         int AddUser(User user);
 
+        List<User> GetAllUsers();
+
     }
 }
