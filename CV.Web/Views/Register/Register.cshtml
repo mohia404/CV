@@ -115,11 +115,6 @@
 
                 <h2>سوابق کاری یا تجربه</h2>
                 <div class="input-group">
-                    <span class="input-group-addon" id="username"><i class="zmdi zmdi-phone"></i></span>
-                    <input asp-for="JobQuantity" type="number" class="form-control" id="jobQuantity" placeholder="تعداد سوابق کاری(بین 0 تا 4)" aria-describedby="username" onchange="changeJobQuantities">
-                </div>
-
-                <div class="input-group">
                     @for (int i = 0; i < 4; i++)
                     {
                         <span class="input-group-addon" id="username"><em>@(i+1)</em></span>

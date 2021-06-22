@@ -95,7 +95,7 @@ namespace CV.Web.Controllers
 
             user.Jobs = new List<Job>();
 
-            for (int i = 0; i < register.JobQuantity; i++)
+            for (int i = 0; i < register.Jobs.Count(); i++)
             {
                 if (register.Jobs[i].JobName != null)
                 {
