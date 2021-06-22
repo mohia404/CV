@@ -22,7 +22,9 @@ namespace CV.DataLayer.Entities
         public string JobName { get; set; }
 
         [Display(Name = "شماره شرکت")]
-        public int? JobNumber { get; set; }
+        [Phone]
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        public string JobNumber { get; set; }
 
         [Display(Name = "آدرس شرکت")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
@@ -41,7 +43,8 @@ namespace CV.DataLayer.Entities
         public string JobDetails { get; set; }
 
         [Display(Name = "حقوق")]
-        public int? JobSalary { get; set; }
+        [DataType(DataType.Currency)]
+        public float? JobSalary { get; set; }
 
         [Display(Name = "علت ترک کار")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]

@@ -17,7 +17,9 @@ namespace CV.Core.DTOs
         public string JobName { get; set; }
 
         [Display(Name = "شماره شرکت")]
-        public int? JobNumber { get; set; } = 0;
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [Phone]
+        public string JobNumber { get; set; }
 
         [Display(Name = "آدرس شرکت")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
@@ -34,7 +36,8 @@ namespace CV.Core.DTOs
         public string JobDetails { get; set; }
 
         [Display(Name = "حقوق")]
-        public int? JobSalary { get; set; } = 0;
+        [DataType(DataType.Currency)]
+        public float? JobSalary { get; set; }
 
         [Display(Name = "علت ترک کار")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]

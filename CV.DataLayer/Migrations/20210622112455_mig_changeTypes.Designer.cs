@@ -4,14 +4,16 @@ using CV.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CV.DataLayer.Migrations
 {
     [DbContext(typeof(CvContext))]
-    partial class CvContextModelSnapshot : ModelSnapshot
+    [Migration("20210622112455_mig_changeTypes")]
+    partial class mig_changeTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,8 +48,7 @@ namespace CV.DataLayer.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("JobNumber")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float?>("JobSalary")
                         .HasColumnType("real");
@@ -101,8 +102,7 @@ namespace CV.DataLayer.Migrations
 
                     b.Property<string>("EmergencyNumber")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EnglishReading")
                         .HasMaxLength(2)
@@ -153,8 +153,7 @@ namespace CV.DataLayer.Migrations
 
                     b.Property<string>("Mobile")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nation")
                         .IsRequired()
@@ -186,8 +185,7 @@ namespace CV.DataLayer.Migrations
 
                     b.Property<string>("Telephone")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UniversityEndYear")
                         .HasMaxLength(4)

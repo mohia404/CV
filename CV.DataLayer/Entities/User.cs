@@ -91,18 +91,21 @@ namespace CV.DataLayer.Entities
 
         [Display(Name = "تلفن ثابت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(12, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public int Telephone { get; set; }
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [Phone]
+        public string Telephone { get; set; }
 
         [Display(Name = "تلفن همراه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(15, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public int Mobile { get; set; }
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [Phone]
+        public string Mobile { get; set; }
 
         [Display(Name = "تلفن ضروری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(15, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public int EmergencyNumber { get; set; }
+        [MaxLength(20, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
+        [Phone]
+        public string EmergencyNumber { get; set; }
 
         [Display(Name = "وضعیت محل سکونت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -161,8 +164,8 @@ namespace CV.DataLayer.Entities
 
         [Display(Name = "میزان حقوق درخواستی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
-        public int ExpectedSalary { get; set; }
+        [DataType(DataType.Currency)]
+        public float ExpectedSalary { get; set; }
 
         [Display(Name = "علاقه به کار دیگری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
